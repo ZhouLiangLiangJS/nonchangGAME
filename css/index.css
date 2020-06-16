@@ -1,0 +1,188 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	overflow:hidden;
+}
+@font-face {
+	font-family:'fontNew'
+	src: url('../font/HYXiaoBoXiongMaoTiW.ttf');
+}
+#app{
+	height: 100vh;
+	max-width: 768px;
+	overflow:hidden;
+	display: inline-block;
+	position: relative;
+	transform: translateX(-50%);
+	left: 50%;
+	color: #fff;
+	text-shadow: -1px 0 #ffaa00, 0 1px #ffaa00, 1px 0 #ffaa00, 0 -1px #ffaa00;
+}
+.bg{
+	height: 100%;
+}
+.taiyangBox{
+	position: absolute;
+	left: 2rem;
+	top: 2rem;
+	width: 7rem;
+	height: 1.5rem;
+	border-radius: 1.5rem;
+	border: 1px solid #fff;
+	background-color: rgba(9,9,9,.1);
+}
+.taiyangBox_img{
+	background: url(../img/taiyang.png)  center;
+	width: 3rem;
+	height: 3rem;
+	background-size: 100% 100%;
+	text-align: center;
+	line-height: 3rem;
+	display: inline-block;
+	top: 50%;
+	left: 0;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	z-index: 1;
+}
+.jingyan{
+	display: inline-block;
+	height: 1rem;
+	width: 85%;
+	position: absolute;
+	left: 10%;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 1rem;
+	font-size: .5rem;
+	border: 1px solid #fff;
+	opacity: .7;
+	overflow: hidden;
+}
+.jingyan  p{
+	color: #fff;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	text-align: center;
+	line-height: 1rem;
+}
+
+.jingyan  span{
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	background-color: #55aa00;
+	left: 0;
+	top: 0;
+}
+.jinbi{
+	width: 6rem;
+	left: 11rem;
+}
+.jinbi .taiyangBox_img{
+	background: url(../img/jinbi.png)  center;
+	border-radius: 100%;
+	width: 2rem;
+	height: 2rem;
+	background-size: 100% 100%;
+}
+.jinbi p{
+	text-align: right;
+	padding-right: 10%;
+	color: #fff;
+}
+.shouhuo{
+	position: absolute;
+	left: 1.5rem;
+	top: 4.5rem;
+	border-radius: 10rem;
+	border: 1px solid #fff;
+	background-color: #89e4ff;
+	width: 8rem;
+	height: 1.5rem;
+	font-size: 0.5rem;
+	text-align: center;
+	line-height: 1.5rem;
+}
+.listMain{
+	position: absolute;
+	left: 1.5rem;
+	top: 6.5rem;
+	font-size: .8rem;
+	/* text-shadow: -1px 0 #910000, 0 1px #910000, 1px 0 #910000, 0 -1px #910000; */
+}
+.listMain div{
+	width: 2.5rem;
+	height: 2.5rem;
+	margin-right: 2rem;
+	float: left;
+	text-align: center;
+	position: relative;
+}
+.listMain div img{
+	height: 100%;
+}
+.listMain div span{
+	position: absolute;
+	bottom: -1.3rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 4rem;
+	font-family:'fontNew'
+}
+.listRight{
+	width: 4rem;
+	position: absolute;
+	right: 0rem;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	line-height: 1rem;
+	font-size: .5rem;
+}
+.listRight div{
+	width: 100%;
+	height: 4rem;
+}
+.listRight div img{
+	width: 100%;
+}
+.listRight div span{
+	display: inline-block;
+	transform: translateY(-1.4rem);
+}
+.tudi{
+	position: absolute;
+	bottom: 3rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 12rem;
+	height: 7rem;
+	background: url(../img/tudi/di1.png);
+	background-size: 100%,100%;
+}
+.tudi img{
+	width: 5rem;
+	position: absolute;
+	bottom: 40%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.tudi div{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 7rem;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: .7rem;
+	border-radius: 2rem;
+	border: 1px solid #fff;
+	text-align: center;
+	background-color: rgba(255,255,255,.4);
+}
