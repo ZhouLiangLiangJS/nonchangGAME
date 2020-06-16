@@ -171,7 +171,13 @@ body{
 	bottom: 40%;
 	left: 50%;
 	transform: translateX(-50%);
+	transition:all 0.5s;
+	-moz-transition:all 0.5s; /* Firefox 4 */
+	-webkit-transition:all 0.5s; /* Safari and Chrome */
+	-o-transition:all 0.5s; /* Opera */
+	
 }
+
 .tudi div{
 	position: absolute;
 	bottom: 0;
