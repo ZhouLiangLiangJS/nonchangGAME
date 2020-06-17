@@ -22,6 +22,7 @@ body{
 }
 .bg{
 	height: 100%;
+	width: 100%;
 }
 .taiyangBox{
 	position: absolute;
@@ -115,18 +116,19 @@ body{
 	font-size: .8rem;
 	/* text-shadow: -1px 0 #910000, 0 1px #910000, 1px 0 #910000, 0 -1px #910000; */
 }
-.listMain div{
+.listMain a{
 	width: 2.5rem;
 	height: 2.5rem;
 	margin-right: 2rem;
 	float: left;
 	text-align: center;
 	position: relative;
+	color: #fff;
 }
-.listMain div img{
+.listMain a img{
 	height: 100%;
 }
-.listMain div span{
+.listMain a span{
 	position: absolute;
 	bottom: -1.3rem;
 	left: 50%;
