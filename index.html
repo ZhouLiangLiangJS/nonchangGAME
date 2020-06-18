@@ -6,71 +6,216 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/paihangbang.css"/>
 </head>
 <body>
 	<div id="app">
-		<img class="bg" src="img/bgt.png" >
-		<div class="taiyangBox">
-			<div class="taiyangBox_img">
-				10
+		<div class="mainbox" v-if="false">
+			<img class="bg" src="img/bgt.png" >
+			<div class="taiyangBox">
+				<div class="taiyangBox_img">
+					10
+				</div>
+				<div class="jingyan">
+					<span></span>
+					<p>30/60</p>
+				</div>
 			</div>
-			<div class="jingyan">
-				<span></span>
-				<p>30/60</p>
+			<div class="taiyangBox jinbi">
+				<div class="taiyangBox_img">
+					
+				</div>
+				<p>277</p>
+			</div>
+			<div class="shouhuo">
+				下次收获时间 01:10
+			</div>
+			<div class="listMain">
+				<a id="otc" href="package/OTC.html">
+					<img src="./img/1_slices/商城%20(2).png" >
+					<span>OTC</span>
+				</a>
+				<a href="package/renwu.html">
+					<img src="./img/1_slices/026348b0d2dc6.png" >
+					<span>我的任务</span>
+				</a>
+				<a href="package/hehuoren.html">
+					<img src="./img/1_slices/合伙人合同管理.png" >
+					<span>合伙人</span>
+				</a>
+			</div>
+			<div class="listRight">
+				<div @tap="phFlag=!phFlag">
+					<img src="./img/1_slices/组%206.png" >
+					<span>排行榜<span>
+				</div>
+				<div @tap="hyFlag=!hyFlag">
+					<img src="./img/1_slices/组%207.png" >
+					<span>好友</span>
+				</div>
+				<div @tap="navto('./package/shangcheng.html')">
+					<img src="./img/1_slices/组%208.png" >
+					<span>商城</span>
+				</div>
+				<div @tap="navto('./package/gerenzhongxin.html')">
+					<img src="./img/1_slices/组%209.png" >
+					<span>个人中心</span>
+				</div>
+			</div>
+			
+			<div class="tudi">
+				<img src="img/shu1.png" >
+				<div>土地等级：普通</div>
+			</div>
+			<div class="paihangbang" :style="phFlag?'':'display:none'">
+				<img class="bgimg" src="./img/paihangbang.png"  >
+				<img class="haoyou" @tap="paihangList" v-show="paihang" src="img/tubiao/Haoyoupaihang.png" >
+				<img class="quanguo" @tap="paihangList" v-show="!paihang" src="img/tubiao/quanguopaihang.png" >
+				<div class="guanbi" @tap="phFlag=!phFlag">
+					
+				</div>
+				<div class="phlist" >
+					<div class="phlist_list">
+						<div class="phlist_left">
+							<img src="img/paihangbang/one.png" >
+							<span>1</span>
+						</div>
+						<div class="phlist_right">
+							<div class="touxiang">
+								
+							</div>
+							<div class="Myusers">
+								<p>好友1</p>
+								<div>
+									<span>
+										<img src="img/tubiao/jiangbei.png" >
+										<em>123123</em>
+									</span>
+									<span>
+										<img src="img/tubiao/xiongzhang.png" >
+										<em>123123</em>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="phlist_list">
+						<div class="phlist_left">
+							<img src="img/paihangbang/two.png" >
+							<span>2</span>
+						</div>
+						<div class="phlist_right">
+							<div class="touxiang">
+								
+							</div>
+							<div class="Myusers">
+								<p>好友1</p>
+								<div>
+									<span>
+										<img src="img/tubiao/jiangbei.png" >
+										<em>123123</em>
+									</span>
+									<span>
+										<img src="img/tubiao/xiongzhang.png" >
+										<em>123123</em>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="phlist_list">
+						<div class="phlist_left">
+							<img src="img/paihangbang/three.png" >
+							<span>3</span>
+						</div>
+						<div class="phlist_right">
+							<div class="touxiang">
+								
+							</div>
+							<div class="Myusers">
+								<p>好友1</p>
+								<div>
+									<span>
+										<img src="img/tubiao/jiangbei.png" >
+										<em>123123</em>
+									</span>
+									<span>
+										<img src="img/tubiao/xiongzhang.png" >
+										<em>1231321</em>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="paihangbang" :style="hyFlag?'':'display:none'">
+				<img class="bgimg" src="./img/bghaoyou.png" style="margin-top: 3vw;" >
+				<div class="guanbi" @tap="hyFlag=!hyFlag">
+					
+				</div>
+				<div class="phlist" style="height: 120vw;top: 30vw;">
+					<div class="phlist_list">
+						<div class="phlist_right" style="width: 100%;">
+							<div class="touxiang">
+								
+							</div>
+							<div class="Myusers">
+								<p>好友1</p>
+								<div>
+									<span>
+										<img src="img/tubiao/jiangbei.png" >
+										<em>123123</em>
+									</span>
+									<span>
+										<img src="img/tubiao/xiongzhang.png" >
+										<em>123123</em>
+									</span>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+							
+					</div>
+					
+				</div>
 			</div>
 		</div>
-		<div class="taiyangBox jinbi">
-			<div class="taiyangBox_img">
-				
-			</div>
-			<p>277</p>
+		<div class="mask">
+			即将拉开帷幕..
 		</div>
-		<div class="shouhuo">
-			下次收获时间 01:10
-		</div>
-		<div class="listMain">
-			<a id="otc" href="unpackage/OTC.html">
-				<img src="./img/1_slices/商城%20(2).png" >
-				<span>OTC</span>
-			</a>
-			<a href="unpackage/renwu.html">
-				<img src="./img/1_slices/026348b0d2dc6.png" >
-				<span>我的任务</span>
-			</a>
-			<a >
-				<img src="./img/1_slices/合伙人合同管理.png" >
-				<span>合伙人</span>
-			</a>
-		</div>
-		<div class="listRight">
-			<div>
-				<img src="./img/1_slices/组%206.png" >
-				<span>排行榜<span>
-			</div>
-			<div>
-				<img src="./img/1_slices/组%207.png" >
-				<span>好友</span>
-			</div>
-			<div>
-				<img src="./img/1_slices/组%208.png" >
-				<span>商城</span>
-			</div>
-			<div>
-				<img src="./img/1_slices/组%209.png" >
-				<span>个人中心</span>
-			</div>
-		</div>
-		
-		<div class="tudi">
-			<img src="img/shu1.png" >
-			<div>土地等级：普通</div>
-		</div>
-	
 	</div>
-	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	
+</body>
+<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 	mui.init();
 	mui.ready(function () {})
+	var myVue = new Vue({
+	    el:'#app',
+	    data:{
+			phFlag:false,
+			hyFlag:false,
+			paihang:false,
+			mask:false
+	    },
+		methods:{
+			paihangList(){
+				this.paihang=!this.paihang
+			},
+			navto(e){
+				console.log(e)
+				mui.openWindow(e,'id',{})
+			}
+		},
+		mounted() {
+			console.log(mui('.mask')[0].style='height:0;opacity:0')
+		}
+	})
 	</script>
-</body>
 </html>

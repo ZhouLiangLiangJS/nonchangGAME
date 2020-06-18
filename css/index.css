@@ -9,6 +9,9 @@ body{
 	font-family:'fontNew'
 	src: url('../font/HYXiaoBoXiongMaoTiW.ttf');
 }
+em{
+		font-style: normal;
+}
 #app{
 	height: 100vh;
 	max-width: 768px;
@@ -193,4 +196,20 @@ body{
 	border: 1px solid #fff;
 	text-align: center;
 	background-color: rgba(255,255,255,.4);
+}
+.mask{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background:linear-gradient(#85fff7,#85fff7,#b7ffff,#07c21d);
+	top: 0;
+	color: #fff;
+	text-shadow: -1px 0 #ffaa00, 0 1px #ffaa00, 1px 0 #ffaa00, 0 -1px #ffaa00;
+	font-weight: 900;
+	transition: all 1s;
+	z-index: 999;
+	text-align: center;
+	line-height: 100vh;
+	overflow: hidden;
+	opacity: 1;
 }
