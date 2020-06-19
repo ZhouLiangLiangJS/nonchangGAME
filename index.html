@@ -7,10 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
 	<link rel="stylesheet" type="text/css" href="css/paihangbang.css"/>
+	<link rel="stylesheet" type="text/css" href="css/login.css"/>
 </head>
 <body>
 	<div id="app">
-		<div class="mainbox" v-if="false">
+		<div class="mainbox">
 			<img class="bg" src="img/bgt.png" >
 			<div class="taiyangBox">
 				<div class="taiyangBox_img">
@@ -182,14 +183,50 @@
 					
 				</div>
 			</div>
-		</div>
+			
+			
+			
+			<div class="login" v-if="login_flag">
+				<span class="title">
+					小卡e宝
+				</span>
+				<img class="loginbg" src="img/loginbg.png" >
+				<div class="loginData">
+					<div>
+						<img src="img/tubiao/zhanghao.png" >
+						<input type="text" placeholder="请输入用户名或手机号">
+					</div>
+				</div>
+				<div class="loginData" style="top:28vh">
+					<div>
+						<img src="img/tubiao/mima.png" >
+						<input type="password" placeholder="请输入密码">
+					</div>
+				</div>
+				<div class="loginData" style="top:36vh">
+					<div>
+						<img src="img/tubiao/yaoqingma.png" >
+						<input type="text" placeholder="请输入邀请码">
+					</div>
+				</div>
+				<div class="anniu">
+					<button type="button" @tap='denglu'>登录</button>
+					<button type="button">注册</button>
+					<span>忘记密码?</span>
+				</div>
+				<div class="qita">
+					<span>其他方式登录</span>
+					<img src="img/tubiao/wxlogo.png" style="float: left;margin-left: 7vw;">
+					<img src="img/tubiao/icon-qq.png" >
+				</div>
+			</div>
+			
+			
+	</div>
+	
 		<div class="mask">
 			即将拉开帷幕..
 		</div>
-	</div>
-	
-	
-	
 </body>
 <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
@@ -202,7 +239,8 @@
 			phFlag:false,
 			hyFlag:false,
 			paihang:false,
-			mask:false
+			mask:false,
+			login_flag:true
 	    },
 		methods:{
 			paihangList(){
@@ -211,6 +249,12 @@
 			navto(e){
 				console.log(e)
 				mui.openWindow(e,'id',{})
+			},
+			denglu(){
+				mui('.login')[0].style="opacity:0;"
+				setTimeout(()=>{
+					this.login_flag=false
+				},1000)
 			}
 		},
 		mounted() {

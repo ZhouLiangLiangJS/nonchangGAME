@@ -24,7 +24,7 @@ em{
 	text-shadow: -1px 0 #ffaa00, 0 1px #ffaa00, 1px 0 #ffaa00, 0 -1px #ffaa00;
 }
 .bg{
-	height: 100%;
+	height: 100vh;
 	width: 100%;
 }
 .taiyangBox{
@@ -162,13 +162,13 @@ em{
 }
 .tudi{
 	position: absolute;
-	bottom: 3rem;
+	bottom: 6vh;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 12rem;
-	height: 7rem;
-	background: url(../img/tudi/di1.png);
-	background-size: 100%,100%;
+	width: 60vw;
+	height: 20vh;
+	background: url(../img/tudi/di1.png) no-repeat;
+	background-size: 100% 100%;
 }
 .tudi img{
 	width: 5rem;
