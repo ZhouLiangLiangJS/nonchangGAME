@@ -29,7 +29,7 @@
 				<p>277</p>
 			</div>
 			<div class="shouhuo">
-				下次收获时间 01:10
+				下次收获时间 {{time.s<10?"0":""}}{{time.s}}:{{time.m<10?"0":""}}{{time.m}}
 			</div>
 			<div class="listMain">
 				<a id="otc" href="package/OTC.html">
@@ -70,8 +70,14 @@
 			</div>
 			<div class="paihangbang" :style="phFlag?'':'display:none'">
 				<img class="bgimg" src="./img/paihangbang.png"  >
-				<img class="haoyou" @tap="paihangList" v-show="paihang" src="img/tubiao/Haoyoupaihang.png" >
-				<img class="quanguo" @tap="paihangList" v-show="!paihang" src="img/tubiao/quanguopaihang.png" >
+				<img class="haoyou"  v-show="paihang" src="img/tubiao/Haoyoupaihang.png" >
+				<img class="quanguo"  v-show="!paihang" src="img/tubiao/quanguopaihang.png" >
+				<div class="haoyou" @tap="paihangList" style="height: 20vw">
+					
+				</div>
+				<div class="quanguo" @tap="paihangList" style="height: 20vw">
+					
+				</div>
 				<div class="guanbi" @tap="phFlag=!phFlag">
 					
 				</div>
@@ -206,7 +212,7 @@
 				<div class="loginData" style="top:36vh">
 					<div>
 						<img src="img/tubiao/yaoqingma.png" >
-						<input type="text" placeholder="请输入邀请码">
+						<input type="text" placeholder="填写邀请码">
 					</div>
 				</div>
 				<div class="anniu">
@@ -240,7 +246,12 @@
 			hyFlag:false,
 			paihang:false,
 			mask:false,
-			login_flag:true
+			login_flag:false,
+			time:{
+				s:0,
+				m:15
+			},
+			jishi:null
 	    },
 		methods:{
 			paihangList(){
@@ -258,7 +269,22 @@
 			}
 		},
 		mounted() {
-			console.log(mui('.mask')[0].style='height:0;opacity:0')
+			mui('.mask')[0].style='height:0;opacity:0',
+			this.jishi=setInterval(()=>{
+				if(this.time.m==0){
+					this.time.m=60
+					if(this.time.s==0){
+						console.log(1)
+						this.time.m=0
+						this.time.s=0
+						clearInterval(this.jishi)
+					}else{
+						this.time.s--
+					}
+				}else{
+					this.time.m--
+				}
+			},1000)
 		}
 	})
 	</script>
