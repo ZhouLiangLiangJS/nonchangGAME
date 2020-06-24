@@ -15,11 +15,10 @@
 			<img class="bg" src="img/bgt.png" >
 			<div class="taiyangBox">
 				<div class="taiyangBox_img">
-					10
 				</div>
 				<div class="jingyan">
 					<span></span>
-					<p>30/60</p>
+					<p>30/50</p>
 				</div>
 			</div>
 			<div class="taiyangBox jinbi">
@@ -28,12 +27,12 @@
 				</div>
 				<p>277</p>
 			</div>
-			<div class="shouhuo">
+			<!-- <div class="shouhuo">
 				下次收获时间 {{time.s<10?"0":""}}{{time.s}}:{{time.m<10?"0":""}}{{time.m}}
-			</div>
+			</div> -->
 			<div class="listMain">
 				<a id="otc" href="package/OTC.html">
-					<img src="./img/1_slices/商城%20(2).png" >
+					<img src="./img/1_slices/OTC.png" >
 					<span>OTC</span>
 				</a>
 				<a href="package/renwu.html">
@@ -41,32 +40,54 @@
 					<span>我的任务</span>
 				</a>
 				<a href="package/hehuoren.html">
-					<img src="./img/1_slices/合伙人合同管理.png" >
+					<img src="./img/1_slices/hehuoren.png" >
 					<span>合伙人</span>
 				</a>
 			</div>
 			<div class="listRight">
 				<div @tap="phFlag=!phFlag">
-					<img src="./img/1_slices/组%206.png" >
+					<img src="./img/1_slices/6.png" >
 					<span>排行榜<span>
 				</div>
 				<div @tap="hyFlag=!hyFlag">
-					<img src="./img/1_slices/组%207.png" >
+					<img src="./img/1_slices/7.png" >
 					<span>好友</span>
 				</div>
 				<div @tap="navto('./package/shangcheng.html')">
-					<img src="./img/1_slices/组%208.png" >
+					<img src="./img/1_slices/8.png" >
 					<span>商城</span>
 				</div>
-				<div @tap="navto('./package/gerenzhongxin.html')">
-					<img src="./img/1_slices/组%209.png" >
+				<div @tap="navto('./package/wode.html')">
+					<img src="./img/1_slices/9.png" >
 					<span>个人中心</span>
 				</div>
 			</div>
 			
-			<div class="tudi">
+			<!-- <div class="tudi">
 				<img src="img/shu1.png" >
 				<div>土地等级：普通</div>
+			</div> -->
+			<div class="newTuDi">
+				<div>
+					<img class="tudibg" src="img/tudi/t1.png" >
+					<img class="shumiao" src="img/shu1.png" >
+				</div>
+				<div>
+					<img class="tudibg" src="img/tudi/t2.png" >
+					<img class="shumiao" src="img/shu2.png" >
+				</div>
+				<div>
+					<img class="tudibg" src="img/tudi/t3.png" >
+					<img class="shumiao" src="img/shu3.png" >
+				</div>
+				<div>
+					<img class="tudibg" src="img/tudi/t4.png" >
+					<img class="zhudi" src="img/zhudi.png" >
+				</div>
+				<div>
+					<img class="tudibg" src="img/tudi/t5.png" >
+					<img class="zhudi" src="img/zhudi.png" >
+				</div>
 			</div>
 			<div class="paihangbang" :style="phFlag?'':'display:none'">
 				<img class="bgimg" src="./img/paihangbang.png"  >
@@ -193,8 +214,9 @@
 			
 			
 			<div class="login" v-if="login_flag">
+				<img src="img/loginlogo.png" class="logo">
 				<span class="title">
-					小卡e宝
+					壹号优选
 				</span>
 				<img class="loginbg" src="img/loginbg.png" >
 				<div class="loginData">
@@ -203,13 +225,13 @@
 						<input type="text" placeholder="请输入用户名或手机号">
 					</div>
 				</div>
-				<div class="loginData" style="top:28vh">
+				<div class="loginData" style="top:38vh">
 					<div>
 						<img src="img/tubiao/mima.png" >
 						<input type="password" placeholder="请输入密码">
 					</div>
 				</div>
-				<div class="loginData" style="top:36vh">
+				<div class="loginData" style="top:46vh">
 					<div>
 						<img src="img/tubiao/yaoqingma.png" >
 						<input type="text" placeholder="填写邀请码">
@@ -246,7 +268,7 @@
 			hyFlag:false,
 			paihang:false,
 			mask:false,
-			login_flag:false,
+			login_flag:true,
 			time:{
 				s:0,
 				m:15
@@ -259,7 +281,7 @@
 			},
 			navto(e){
 				console.log(e)
-				mui.openWindow(e,'id',{})
+				mui.openWindow(e)
 			},
 			denglu(){
 				mui('.login')[0].style="opacity:0;"
